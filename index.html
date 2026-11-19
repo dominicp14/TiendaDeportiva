@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GearX Sport | Tienda Deportiva</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ENCABEZADO: logo + menú de navegación -->
+  <header class="topbar">
+    <a class="brand" href="#inicio">
+      <img src="img/logo.png" alt="Logo GearX Sport">
+      <span>GearX Sport</span>
+    </a>
+
+    <nav class="nav">
+      <a href="#productos">Productos</a>
+      <a href="#nosotros">Nosotros</a>
+      <button id="btnTema" class="icon-btn" title="Modo oscuro / claro" aria-label="Cambiar tema">◐</button>
+      <select id="selMoneda" aria-label="Moneda">
+        <option value="CRC">CRC ₡</option>
+        <option value="USD">USD $</option>
+      </select>
+      <button id="btnCarrito" class="icon-btn" aria-label="Abrir carrito">🛒</button>
+      <span class="pill">Carrito: <b id="contador">0</b></span>
+    </nav>
+  </header>
+
+  <main id="inicio">
+
+    <!-- TEXTO DE PRESENTACIÓN -->
+    <p class="intro">
+      <b>Bienvenido(a)</b>: Somos GearX Sport, tu tienda deportiva en línea con envío a todo
+      Costa Rica. Ofrecemos ropa deportiva, calzado, accesorios y más, con marcas 100% originales
+      y precios accesibles. Compra rápido, seguro y sin filas. 🏃💥
+    </p>
+
+    <!-- MENÚ DE FILTROS -->
+    <section class="filtros" aria-label="Filtros">
+      <input type="search" id="buscador" placeholder="Buscar (ej. balón, guantes)">
+      <select id="selCategoria" aria-label="Categoría">
+        <option value="todas">Todas</option>
+      </select>
+      <select id="selOrden" aria-label="Ordenar">
+        <option value="">Ordenar</option>
+        <option value="asc">Precio: menor a mayor</option>
+        <option value="desc">Precio: mayor a menor</option>
+        <option value="nombre">Nombre (A-Z)</option>
+      </select>
+      <div class="rango">
+        <input type="range" id="rangoPrecio" min="0" max="60000" step="1000" value="60000">
+        <small id="textoRango">Hasta: ₡60 000</small>
+      </div>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section id="productos" class="grid" aria-label="Productos"></section>
+
+    <!-- NOSOTROS -->
+    <section id="nosotros" class="nosotros">
+      <h2>Nosotros</h2>
+      <p>GearX Sport nació en Heredia con una meta simple: que todas las personas puedan entrenar con
+         equipo de calidad. Trabajamos con marcas reconocidas y hacemos envíos a todo el país.</p>
+    </section>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="footer">
+    <p>© 2026 GearX Sport · Todos los derechos reservados</p>
+    <small>CTP de Heredia, Sección Nocturna · Programación Web</small>
+  </footer>
+
+  <!-- CARRITO (panel lateral) -->
+  <div id="fondo" class="fondo"></div>
+  <aside id="panelCarrito" class="panel" aria-label="Carrito de compras">
+    <div class="panel-head">
+      <img src="img/logo.png" alt="">
+      <b>Carrito</b>
+      <button id="btnCerrar" class="icon-btn" aria-label="Cerrar carrito">✕</button>
+    </div>
+    <div id="listaCarrito" class="lista"></div>
+    <div class="panel-foot">
+      <b id="total">Total: ₡0</b>
+      <button id="btnVaciar" class="btn-rojo">Vaciar carrito</button>
+    </div>
+  </aside>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
